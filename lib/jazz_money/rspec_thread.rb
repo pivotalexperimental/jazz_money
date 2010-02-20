@@ -52,7 +52,6 @@ module JazzMoney
       spec_id = spec['id']
       parent.it example_name do
         while me.jasmine_reporter.results[spec_id].nil?
-          puts "sleeping while waiting for #{spec_id}"
           sleep 0.2
         end
         me.report_spec(me.jasmine_reporter.results[spec_id])
