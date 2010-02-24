@@ -1,0 +1,1 @@
+var Dependency = { prop : 42 };

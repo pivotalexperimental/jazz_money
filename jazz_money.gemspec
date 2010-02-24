@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
      "lib/jazz_money.rb",
      "lib/jazz_money/runner.rb",
      "lib/jazz_money/rspec_thread.rb",
-     "lib/jazz_money/jasmine_reporter.rb",
+     "lib/jazz_money/jasmine_runner.rb",
      "jasmine/lib/TrivialReporter.js",
      "jasmine/lib/consolex.js",
      "jasmine/lib/jasmine-0.10.0.js",
