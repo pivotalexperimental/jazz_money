@@ -14,7 +14,7 @@ var jazzMoney = jasmine + harmony;
 
 Using
 ---------
-Install harmony by following instructions here: http://github.com/mynyml/harmony
+Install harmony by following instructions here: [http://github.com/mynyml/harmony](http://github.com/mynyml/harmony)
 
 Install jazz_money
     gem install jazz_money
