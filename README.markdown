@@ -35,3 +35,5 @@ To run your specs, create a file in your project (spec/javascript/run_jasmine_sp
     ]
 
     JazzMoney::Runner.new(javascript_files, jasmine_spec_files).call
+
+You can then run this file on the command line using 'ruby'
