@@ -52,9 +52,9 @@ jasmine-ruby, your tests should run with little modification.
 
 If you need HTML fixtures, JazzMoney has an API for that:
 
-  beforeEach(function() {
-    JazzMoney.loadFixture("projects");
-  });
+   beforeEach(function() {
+     JazzMoney.loadFixture("projects");
+   });
 
 In the code above, a file named 'spec/javascript/fixtures/projects.html' will be loaded and its entire contents will
 be dumped into the innerHTML of the body tag of the current window. You can add directory structure underneath the top
