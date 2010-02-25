@@ -1,5 +1,7 @@
 describe("Jasmine fixture example", function() {
   it("should work", function() {
-    expect(JazzMoney.allFixtures['html_fixture']).toEqual('<div id="stuff">Stuff</div>');
+    expect(document.getElementById('stuff')).toBeNull();
+    JazzMoney.loadFixture('html_fixture')
+    expect(document.getElementById('stuff').innerHTML).toEqual('Stuff')
   });
 });

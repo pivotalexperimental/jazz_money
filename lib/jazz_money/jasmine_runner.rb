@@ -46,6 +46,9 @@ module JazzMoney
       @page.execute_js(<<-JS)
         var JazzMoney = {};
         JazzMoney.allFixtures = eval(#{fixtures.to_json});
+        JazzMoney.loadFixture = function(fixturePath) {
+          document.getElementsByTagName('body')[0].innerHTML = this.allFixtures[fixturePath];
+        }
       JS
     end
 
