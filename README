@@ -1,7 +1,0 @@
-var jasmine = JsBdd;
-var traceMonkey = Mozilla.JsEngine;
-var johnson = Ruby + TraceMonkey;
-var envJs = JsBrowser;
-var harmony = johnson + envJs;
-
-var jazzMoney = jasmine + harmony; 
