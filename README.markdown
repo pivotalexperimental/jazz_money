@@ -4,13 +4,13 @@ jazz_money
 
 The Math
 ----------
-var jasmine = JsBdd;
-var traceMonkey = Mozilla.JsEngine;
-var johnson = Ruby + TraceMonkey;
-var envJs = JsBrowser;
-var harmony = johnson + envJs;
+    var jasmine = JsBdd;
+    var traceMonkey = Mozilla.JsEngine;
+    var johnson = Ruby + TraceMonkey;
+    var envJs = JsBrowser;
+    var harmony = johnson + envJs;
 
-var jazzMoney = jasmine + harmony;
+    var jazzMoney = jasmine + harmony;
 
 Using
 ---------
