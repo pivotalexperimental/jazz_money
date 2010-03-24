@@ -11,7 +11,9 @@ module JazzMoney
 
     def call
       @jasmine_runner.start
-      suites = @page.execute_js('jsApiReporter.suites();')
+
+      # johnson is not thread-safe, so serialize the suites into ruby objects
+      suites = JSON.parse(@page.execute_js('JSON.stringify(jsApiReporter.suites());'))
       rspec_thread = RspecThread.start(suites, self)
       @jasmine_runner.wait
       rspec_thread.join

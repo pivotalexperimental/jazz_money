@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
      "jasmine/lib/json2.js",
   ]
 
-  s.add_dependency 'harmony', '0.5.2'
+  s.add_dependency 'harmony', '0.5.4'
 end

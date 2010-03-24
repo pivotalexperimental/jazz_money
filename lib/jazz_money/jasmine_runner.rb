@@ -16,11 +16,19 @@ module JazzMoney
       @page.window['jazzMoneyReporter'] = @observer
       js = <<-JS
       jasmine.JsApiReporter.prototype.reportSpecResults = function(spec) {
+        var messages = [];
+        var results = spec.results().getItems();
+        for (var i = 0; i < results.length; i++ ) {
+          var item = results[i];
+          var message = item.message
+          var trace = item.trace.stack
+          messages.push({message : message, stack_trace : trace})
+        }
         this.results_[spec.id] = {
-          messages: spec.results().getItems(),
+          messages: messages,
           result: spec.results().failedCount > 0 ? "failed" : "passed"
         };
-        jazzMoneyReporter.report_spec_results(spec.id, JSON.stringify(this.results_[spec.id]))
+        jazzMoneyReporter.report_spec_results(spec.id, JSON.stringify(this.results_[spec.id]));
       };
       JS
       @page.execute_js(js)
@@ -54,7 +62,7 @@ module JazzMoney
 
     def load_jasmine
       dir = File.join(JAZZ_MONEY_DIR, "jasmine", "lib")
-      ['json2.js', 'consolex.js', 'jasmine-0.10.0.js'].each do |file|
+      ['consolex.js', 'jasmine-0.10.0.js'].each do |file|
         @page.load(File.join(dir, file))
       end
     end

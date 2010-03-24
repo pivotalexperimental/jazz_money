@@ -65,7 +65,7 @@ module JazzMoney
         all_fail_messages = []
         fail_messages_hashes.each do |message|
           all_fail_messages << message["message"]
-          js_stack_lines = message["trace"]["stack"].split("\n").select {|stack_line| stack_line =~ /spec\/javascript/}
+          js_stack_lines = message["stack_trace"].split("\n").select {|stack_line| stack_line =~ /spec\/javascript/}
           js_stack_lines.each {|stack_line| all_fail_messages << stack_line.gsub("()@", "./")}
         end
 
