@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.description         = "Jasmine + Harmony"
   s.author              = "Mike Grafton"
   s.email               = "mike@pivotallabs.com"
-  s.homepage            = "http://github.com/pivotal/jazz_money"
+  s.homepage            = "http://github.com/pivotalexperimental/jazz_money"
   s.rubyforge_project   = ""
   s.require_path        = "lib"
   s.version             =  "0.0.2"
