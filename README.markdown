@@ -41,7 +41,13 @@ To run your specs, create a file in your project (spec/javascript/run_jasmine_sp
 
     JazzMoney::Runner.new(javascript_files, jasmine_spec_files).call
 
-You can then run this file on the command line using 'ruby'
+You can then run this file on the command line using 'ruby'.
+
+JazzMoney uses the RSpec runner to run your Jasmine specs. This means that if you pass options that RSpec recognizes,
+they will be parsed and used. For instance, to see colored and nested output instead of the standard progress dots,
+run jazz_money as so:
+
+    ruby spec/javascript/run_jasmine_specs_with_jazz_money.rb -f n -c
 
 ### Execution Environment
 
