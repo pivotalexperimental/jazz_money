@@ -25,10 +25,11 @@ Using
 ### Running Jasmine Specs
 
 The easiest way to run jasmine specs is to build a simple ruby file that can launch JazzMoney. If you are using the
-[jasmine gem](http://github.com/pivotal/jasmine-gem), then new, sexy way to do this is to piggy-back on your existing
+[jasmine gem](http://github.com/pivotal/jasmine-gem), then the new, sexy way to do this is to piggy-back on your existing
 jasmine.yml file. Check out [this gist](http://gist.github.com/564431) for an example.  If you don't have a jasmine.yml
 file and don't feel like running the jasmine gem's generator to get one, [here is the default one you get](http://gist.github.com/564437)
-if you run the generator.
+if you run the generator. You *must* put this file in 'spec/javascripts/support/jasmine.yml' for JazzMoney (via the
+jasmine gem) to pick it up.
 
 YAML-haters can bypass the jasmine.yml file and build their file lists by hand. [Here is an example](http://gist.github.com/564450)
 of doing just that.
@@ -103,3 +104,5 @@ If you clone the repo and want to run specs, that can be done with
     spec spec/
 
 Pull requests gladly accepted!
+
+Copyright (c) 2008-2010 Pivotal Labs. This software is licensed under the MIT License.
