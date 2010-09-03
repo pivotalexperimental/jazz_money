@@ -33,7 +33,6 @@ describe JazzMoney::JasmineRunner do
     JSON.parse(@received_results)["messages"][1]["stack_trace"].should include("spec/fixtures/failure.js")    
   end
 
-
   it "loads js includes so the specs can depend on them" do
     mock_observer
     jasmine_spec_file = fixture_file('spec_with_dependency.js')
@@ -68,7 +67,6 @@ describe JazzMoney::JasmineRunner do
     JSON.parse(@received_results)["result"].should == "failed"
     JSON.parse(@received_results)["messages"][0]["message"].should == "Expected HTMLNode to equal HTMLNode."
   end
-
 
   def mock_observer
     mock(@observer).report_spec_results(0, anything) do |spec_id, results|

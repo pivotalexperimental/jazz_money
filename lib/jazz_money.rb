@@ -1,3 +1,4 @@
+require 'jasmine'
 require 'harmony'
 require 'json'
 

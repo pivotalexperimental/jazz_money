@@ -1,6 +1,15 @@
 module JazzMoney
 
+  # TODO: rename. easy to confuse with JasmineRunner. or rename JasmineRunner.
   class Runner
+
+    def self.from_jasmine_config
+      jasmine_config = Jasmine::Config.new
+
+      # jasmine gives us spec files relative to spec/javascripts, but we need them relative to the project root
+      spec_files_relative_to_project_root = jasmine_config.spec_files.map {|path| "spec/javascripts/#{path}"}
+      self.new(jasmine_config.src_files, spec_files_relative_to_project_root)
+    end
 
     def initialize(js_includes, jasmine_spec_files)
       @page = Harmony::Page.new

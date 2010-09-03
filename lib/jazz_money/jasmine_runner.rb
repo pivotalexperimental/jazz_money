@@ -2,7 +2,7 @@ module JazzMoney
 
   class JasmineRunner
     
-    def initialize(page, jasmine_spec_files, js_includes, observer, html_fixture_dir = 'spec/javascript/fixtures')
+    def initialize(page, jasmine_spec_files, js_includes, observer, html_fixture_dir = 'spec/javascripts/fixtures')
       @page = page
       @observer = observer
       @js_includes = js_includes
@@ -61,7 +61,9 @@ module JazzMoney
     end
 
     def load_jasmine
-      jasmine_gem_path = Gem.searcher.find('jasmine').full_gem_path
+      jasmine_gemspecs = Gem.searcher.find_all('jasmine')
+      correct_jasmine_gemspec = jasmine_gemspecs.detect { |gemspec| gemspec.version.to_s == "0.11.1.0" }
+      jasmine_gem_path = correct_jasmine_gemspec.full_gem_path
       jasmine_js_files_path = File.join(jasmine_gem_path, "jasmine", "lib")
       ['consolex.js', 'jasmine.js'].each do |file|
         @page.load(File.join(jasmine_js_files_path, file))
@@ -88,9 +90,5 @@ module JazzMoney
         jasmineEnv.execute();
       JS
     end
-
-
-
-
   end
 end
