@@ -5,8 +5,9 @@ module JazzMoney
 
     def self.from_jasmine_config
       jasmine_config = Jasmine::Config.new
-      spec_files = jasmine_config.spec_files.map {|path| File.join(jasmine_config.spec_dir, path)}
-      self.new(jasmine_config.src_files, spec_files)
+      spec_files = jasmine_config.spec_files.map { |path| File.join(jasmine_config.spec_dir, path) }
+      src_files = jasmine_config.src_files.map { |path| File.join(jasmine_config.src_dir, path)}
+      self.new(src_files, spec_files)
     end
 
     def initialize(js_includes, jasmine_spec_files)
