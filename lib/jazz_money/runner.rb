@@ -6,6 +6,10 @@ module JazzMoney
     def self.from_jasmine_config
       jasmine_config = Jasmine::Config.new
 
+      unless jasmine_config.stylesheets.empty?
+        warn "WARNING: JazzMoney does not support stylesheets!"
+      end
+
       spec_files = jasmine_config.spec_files.map { |path| File.join(jasmine_config.spec_dir, path) }
       helper_files = jasmine_config.helpers.map { |path| File.join(jasmine_config.spec_dir, path) }
       src_files = jasmine_config.src_files.map { |path| File.join(jasmine_config.src_dir, path) }
