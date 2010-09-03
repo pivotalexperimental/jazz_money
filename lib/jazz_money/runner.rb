@@ -5,10 +5,8 @@ module JazzMoney
 
     def self.from_jasmine_config
       jasmine_config = Jasmine::Config.new
-
-      # jasmine gives us spec files relative to spec/javascripts, but we need them relative to the project root
-      spec_files_relative_to_project_root = jasmine_config.spec_files.map {|path| "spec/javascripts/#{path}"}
-      self.new(jasmine_config.src_files, spec_files_relative_to_project_root)
+      spec_files = jasmine_config.spec_files.map {|path| File.join(jasmine_config.spec_dir, path)}
+      self.new(jasmine_config.src_files, spec_files)
     end
 
     def initialize(js_includes, jasmine_spec_files)
