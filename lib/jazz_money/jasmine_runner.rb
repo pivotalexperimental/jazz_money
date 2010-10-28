@@ -62,10 +62,10 @@ module JazzMoney
 
     def load_jasmine
       jasmine_gemspecs = Gem.searcher.find_all('jasmine')
-      correct_jasmine_gemspec = jasmine_gemspecs.detect { |gemspec| gemspec.version.to_s == "0.11.1.0" }
+      correct_jasmine_gemspec = jasmine_gemspecs.detect { |gemspec| gemspec.version.to_s == "1.0.1" }
       jasmine_gem_path = correct_jasmine_gemspec.full_gem_path
       jasmine_js_files_path = File.join(jasmine_gem_path, "jasmine", "lib")
-      ['consolex.js', 'jasmine.js'].each do |file|
+      ['jasmine.js'].each do |file|
         @page.load(File.join(jasmine_js_files_path, file))
       end
     end

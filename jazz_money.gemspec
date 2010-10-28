@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
      "lib/jazz_money/jasmine_runner.rb",
   ]
 
-  s.add_dependency 'harmony', '0.5.4'
-  s.add_dependency 'jasmine', '0.11.1'
+  s.add_dependency 'harmony', '0.5.6'
+  s.add_dependency 'jasmine', '1.0.1'
+  s.add_dependency 'rspec', '1.3.1'
 end
