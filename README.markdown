@@ -19,7 +19,7 @@ Install harmony by following instructions here: [http://github.com/mynyml/harmon
 Install JazzMoney
     gem install jazz_money
 
-Note that there is an issue with installing JazzMoney using bundler. I get a segfault in Johnson:
+Note that there is an issue with installing JazzMoney using bundler. The gem installs fine but when I invoke JM, I get a segfault in Johnson:
 
     /Users/mag/.rvm/gems/ruby-1.8.7-p299@scratch/gems/johnson-2.0.0.pre3/lib/johnson/tracemonkey/tracemonkey.bundle: [BUG] Segmentation fault
     ruby 1.8.7 (2010-06-23 patchlevel 299) [i686-darwin10.4.0]
