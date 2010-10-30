@@ -13,7 +13,7 @@ module JazzMoney
       spec_files = jasmine_config.spec_files.map { |path| File.join(jasmine_config.spec_dir, path) }
       helper_files = jasmine_config.helpers.map { |path| File.join(jasmine_config.spec_dir, path) }
       src_files = jasmine_config.src_files.map { |path| File.join(jasmine_config.src_dir, path) }
-      
+
       self.new(src_files, helper_files + spec_files)
     end
 
